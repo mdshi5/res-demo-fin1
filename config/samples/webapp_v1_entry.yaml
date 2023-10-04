@@ -1,0 +1,13 @@
+apiVersion: webapp.shi.io/v1
+kind: Entry
+metadata:
+  labels:
+    app.kubernetes.io/name: entry
+    app.kubernetes.io/instance: entry-sample
+    app.kubernetes.io/part-of: res-demo1
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: res-demo1
+  name: entry-sample
+spec:
+  # TODO(user): Add fields here
+  foo: "foo"

@@ -1,0 +1,27 @@
+# permissions for end users to view entries.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: entry-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: res-demo1
+    app.kubernetes.io/part-of: res-demo1
+    app.kubernetes.io/managed-by: kustomize
+  name: entry-viewer-role
+rules:
+- apiGroups:
+  - webapp.shi.io
+  resources:
+  - entries
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - webapp.shi.io
+  resources:
+  - entries/status
+  verbs:
+  - get

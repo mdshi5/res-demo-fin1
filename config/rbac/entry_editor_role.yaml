@@ -1,0 +1,31 @@
+# permissions for end users to edit entries.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: entry-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: res-demo1
+    app.kubernetes.io/part-of: res-demo1
+    app.kubernetes.io/managed-by: kustomize
+  name: entry-editor-role
+rules:
+- apiGroups:
+  - webapp.shi.io
+  resources:
+  - entries
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - webapp.shi.io
+  resources:
+  - entries/status
+  verbs:
+  - get
